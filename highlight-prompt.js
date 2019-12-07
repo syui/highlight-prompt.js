@@ -4,7 +4,7 @@ function highlight_prompt() {
     	for(i=0; i <= list.length-1; i++){
     	    var nodes = list[i].innerHTML;
     	    if (nodes.match(/\$ /)){
-    	        t = nodes.replace(/\$ /g,"<span class='prompt'>$ </span>");
+    	        t = nodes.replace(/^\$ /mg,"<span class='prompt'>$ </span>");
     	        document.getElementsByClassName("language-sh hljs bash")[i].innerHTML = '';
     	        document.getElementsByClassName("language-sh hljs bash")[i].insertAdjacentHTML('afterbegin', t);		
     	    };
